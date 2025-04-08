@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({origin: "https://registerkaroo.netlify.app", methods: "GET,POST,PUT,DELETE", credentials: true}));
+app.options('*', cors());
 
 
 app.use('/api/users',router)
